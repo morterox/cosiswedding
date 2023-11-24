@@ -16,7 +16,7 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     if (!(formFullName.value.length > 5)) {
-        alert('Please write your full name before starting')
+        alert('Please write your full name before starting you fool')
     } else {
         startButton.classList.add('hide')
         formContainer.classList.add('hide')
