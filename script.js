@@ -5,12 +5,12 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const formContainer = document.getElementById('form-container')
 const formFullName = document.getElementById('form-full-name')
 
-let shuffledQuestions, currentQuestionIndex, total = 0
+let shuffledQuestions, currentQuestionIndex, total
 
 startButton.addEventListener('click', startGame)
 // formFullName.addEventListener('blur', startGame)
 
-formFullName.addEventListener("keypress", function(event) {
+formFullName.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
       startButton.click();
     }
@@ -20,6 +20,7 @@ function startGame() {
     if (!(formFullName.value.length > 5)) {
         alert('Please write your full name before starting')
     } else {
+        total = 0
         startButton.classList.add('hide')
         formContainer.classList.add('hide')
         shuffledQuestions = randomizeList(questions)
