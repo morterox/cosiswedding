@@ -16,7 +16,7 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     if (!(formFullName.value.length > 5)) {
-        alert('Please write your full name before starting you fool')
+        alert('Please write your full name before starting')
     } else {
         startButton.classList.add('hide')
         formContainer.classList.add('hide')
@@ -51,7 +51,6 @@ function randomizeList(list) {
 }
 
 function resetState() {
-    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
@@ -60,13 +59,9 @@ function resetState() {
 
 function selectAnswer(e) {
     const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    // setStatusClass(document.body,correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+    const correctCheck = selectedButton.dataset.correct
+    behaviorForOption(correctCheck)
     if (shuffledQuestions.length > currentQuestionIndex + 1){
-        // nextButton.classList.remove('hide')
         currentQuestionIndex++
         setNextQuestion()
     } else {
@@ -79,29 +74,21 @@ function selectAnswer(e) {
     }
 }
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
+function behaviorForOption(correct) {
     resetState()
     if (correct) {
         //TODO behavior for correct
         total++
-        // element.classList.add('correct')
     } else {
         //TODO behavior for wrong
-        // element.classList.add('wrong')
     }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
 }
 
 const questions = [
     {
         question: '¿Cuantos años hace que se conocen los novios?',
         answers: [
-            {text: '2', correct: true},
+            {text: '2', correct: false},
             {text: '4', correct: true},
             {text: '6', correct: false}
         ]
@@ -109,7 +96,7 @@ const questions = [
     {
         question: '¿Dónde se conoció la pareja por primera vez?',
         answers: [
-            {text: 'En un cumpleaños', correct: false},
+            {text: 'Una fiesta', correct: false},
             {text: 'Ok Cupid', correct: true},
             {text: 'Disney', correct: false},
             {text: 'Shabat', correct: false}
@@ -122,6 +109,13 @@ const questions = [
             {text: 'Maia', correct: true},
             {text: 'Nami', correct: false},
             {text: 'Bicho', correct: false}
+        ]
+    },
+    {
+        question: "¿Quién se queda despierto hasta mas tarde?",
+        answers: [
+            {text: 'Martin', correct: false},
+            {text: 'Eileen', correct: true}
         ]
     }
 ]
