@@ -68,7 +68,7 @@ function selectAnswer(e) {
         setNextQuestion()
     } else {
         //TODO behavior to SEND FORM
-        questionElement.innerText = 'Thanks for being part of our party '+formFullName.value+', cross your fingers, maybe you won with: ' + total + ' points!'
+        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formFullName.value+'. Cruza los dedos, tal vez ganaste con: ' + total + ' puntos!'
         console.log(formFullName.value)
         console.log(total)
         startButton.innerText = 'Restart'
@@ -92,7 +92,8 @@ const questions = [
         answers: [
             {text: '2', correct: false},
             {text: '4', correct: true},
-            {text: '6', correct: false}
+            {text: '6', correct: false},
+            {text: '7', correct: false}
         ]
     },
     {
@@ -127,6 +128,33 @@ const questions = [
             {text: 'About Time', correct: true},
             {text: 'Loco por Mary', correct: false},
             {text: 'La La Land', correct: false}
+        ]
+    },
+    {
+        question: "¿Cuál es la banda favorita de Martín?",
+        answers: [
+            {text: 'Nickelback', correct: true},
+            {text: 'Fall Out Boy', correct: false},
+            {text: 'Attaque 77', correct: false},
+            {text: 'Los Piojos', correct: false}
+        ]
+    },
+    {
+        question: "¿Cuál es el apodo de la pareja?",
+        answers: [
+            {text: 'Cosis', correct: true},
+            {text: 'Bubus', correct: false},
+            {text: 'Babies', correct: false},
+            {text: 'Yugus', correct: false}
+        ]
+    },
+    {
+        question: "¿Cómo se llama la mamá de Eileen?",
+        answers: [
+            {text: 'Leda', correct: true},
+            {text: 'Raquel', correct: false},
+            {text: 'Mirta', correct: false},
+            {text: 'Sandra', correct: false}
         ]
     }
 ]
