@@ -1,5 +1,4 @@
 const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -9,10 +8,13 @@ const formFullName = document.getElementById('form-full-name')
 let shuffledQuestions, currentQuestionIndex, total = 0
 
 startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
-})
+// formFullName.addEventListener('blur', startGame)
+
+formFullName.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      startButton.click();
+    }
+});
 
 function startGame() {
     if (!(formFullName.value.length > 5)) {
@@ -51,7 +53,6 @@ function randomizeList(list) {
 }
 
 function resetState() {
-    nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -66,7 +67,7 @@ function selectAnswer(e) {
         setNextQuestion()
     } else {
         //TODO behavior to SEND FORM
-        questionElement.innerText = 'Thanks for being part of our party '+formFullName.value+', cross your fingers, maybe you won!'
+        questionElement.innerText = 'Thanks for being part of our party '+formFullName.value+', cross your fingers, maybe you won with: ' + total + ' points!'
         console.log(formFullName.value)
         console.log(total)
         startButton.innerText = 'Restart'
@@ -116,6 +117,15 @@ const questions = [
         answers: [
             {text: 'Martin', correct: false},
             {text: 'Eileen', correct: true}
+        ]
+    },
+    {
+        question: "¿Cuál es la película favorita de la pareja?",
+        answers: [
+            {text: 'Diario de una Pasión', correct: false},
+            {text: 'About Time', correct: true},
+            {text: 'Loco por Mary', correct: false},
+            {text: 'La La Land', correct: false}
         ]
     }
 ]
