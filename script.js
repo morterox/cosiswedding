@@ -18,7 +18,7 @@ formFullName.addEventListener("keydown", function(event) {
 
 function startGame() {
     if (!(formFullName.value.length > 5)) {
-        alert('Please write your full name before starting')
+        alert('Escriba su nombre completo por favor')
     } else {
         total = 0
         startButton.classList.add('hide')
