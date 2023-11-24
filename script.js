@@ -7,6 +7,8 @@ const formFullName = document.getElementById('form-full-name')
 
 let shuffledQuestions, currentQuestionIndex, total
 
+const vocals = ['a','e','i','o','u']
+
 startButton.addEventListener('click', startGame)
 // formFullName.addEventListener('blur', startGame)
 
@@ -78,7 +80,8 @@ function selectAnswer(e) {
 
 function behaviorForOption(correct) {
     resetState()
-    if (correct) {
+    //  if (correct) * when correct were boolean
+    if (vocals.includes(correct)) {
         //TODO behavior for correct
         total++
     } else {
@@ -90,71 +93,80 @@ const questions = [
     {
         question: '¿Cuantos años hace que se conocen los novios?',
         answers: [
-            {text: '2', correct: false},
-            {text: '4', correct: true},
-            {text: '6', correct: false},
-            {text: '7', correct: false}
+            {text: '2', correct: 'f'},
+            {text: '4', correct: 'a'},
+            {text: '6', correct: 'g'},
+            {text: '7', correct: 'y'}
         ]
     },
     {
         question: '¿Dónde se conoció la pareja por primera vez?',
         answers: [
-            {text: 'Una fiesta', correct: false},
-            {text: 'Ok Cupid', correct: true},
-            {text: 'Disney', correct: false},
-            {text: 'Shabat', correct: false}
+            {text: 'Una fiesta', correct: 'b'},
+            {text: 'Ok Cupid', correct: 'a'},
+            {text: 'Disney', correct: 'c'},
+            {text: 'Shabat', correct: 'p'}
         ]
     },
     {
         question: "¿Cómo se llama su Perrita?",
         answers: [
-            {text: 'Cthulu', correct: false},
-            {text: 'Maia', correct: true},
-            {text: 'Nami', correct: false},
-            {text: 'Bicho', correct: false}
+            {text: 'Cthulu', correct: 't'},
+            {text: 'Maia', correct: 'a'},
+            {text: 'Nami', correct: 'r'},
+            {text: 'Bicho', correct: 'f'}
         ]
     },
     {
         question: "¿Quién se queda despierto hasta mas tarde?",
         answers: [
-            {text: 'Martin', correct: false},
-            {text: 'Eileen', correct: true}
+            {text: 'Martin', correct: 'g'},
+            {text: 'Eileen', correct: 'u'}
         ]
     },
     {
         question: "¿Cuál es la película favorita de la pareja?",
         answers: [
-            {text: 'Diario de una Pasión', correct: false},
-            {text: 'About Time', correct: true},
-            {text: 'Loco por Mary', correct: false},
-            {text: 'La La Land', correct: false}
+            {text: 'Diario de una Pasión', correct: 'w'},
+            {text: 'About Time', correct: 'i'},
+            {text: 'Loco por Mary', correct: 'q'},
+            {text: 'La La Land', correct: 'n'}
         ]
     },
     {
         question: "¿Cuál es la banda favorita de Martín?",
         answers: [
-            {text: 'Nickelback', correct: true},
-            {text: 'Fall Out Boy', correct: false},
-            {text: 'Attaque 77', correct: false},
-            {text: 'Los Piojos', correct: false}
+            {text: 'Nickelback', correct: 'e'},
+            {text: 'Fall Out Boy', correct: 'y'},
+            {text: 'Attaque 77', correct: 't'},
+            {text: 'Los Piojos', correct: 'w'}
         ]
     },
     {
         question: "¿Cuál es el apodo de la pareja?",
         answers: [
-            {text: 'Cosis', correct: true},
-            {text: 'Bubus', correct: false},
-            {text: 'Babies', correct: false},
-            {text: 'Yugus', correct: false}
+            {text: 'Cosis', correct: 'a'},
+            {text: 'Bubus', correct: 'y'},
+            {text: 'Babies', correct: 'g'},
+            {text: 'Yugus', correct: 'n'}
         ]
     },
     {
         question: "¿Cómo se llama la mamá de Eileen?",
         answers: [
-            {text: 'Leda', correct: true},
-            {text: 'Raquel', correct: false},
-            {text: 'Mirta', correct: false},
-            {text: 'Sandra', correct: false}
+            {text: 'Leda', correct: 'a'},
+            {text: 'Raquel', correct: 'b'},
+            {text: 'Mirta', correct: 't'},
+            {text: 'Sandra', correct: 'k'}
+        ]
+    },
+    {
+        question: "¿Cómo se llama la mamá de Eileen?",
+        answers: [
+            {text: 'Leda', correct: 'a'},
+            {text: 'Raquel', correct: 'k'},
+            {text: 'Mirta', correct: 't'},
+            {text: 'Sandra', correct: 'm'}
         ]
     }
 ]
