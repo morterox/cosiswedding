@@ -152,21 +152,70 @@ const questions = [
         ]
     },
     {
-        question: "¿Cómo se llama la mamá de Eileen?",
+        question: "¿Cómo se llaman los padres de Eileen?",
         answers: [
-            {text: 'Leda', correct: 'a'},
-            {text: 'Raquel', correct: 'b'},
-            {text: 'Mirta', correct: 't'},
-            {text: 'Sandra', correct: 'k'}
+            {text: 'Leda / Julio', correct: 'a'},
+            {text: 'Raquel / Isaac', correct: 'b'},
+            {text: 'Mirta / Roberto', correct: 't'},
+            {text: 'Sandra / Marcelo', correct: 'k'}
         ]
     },
     {
-        question: "¿Cómo se llama la mamá de Eileen?",
+        question: "¿Cómo se llaman los padres de Martín?",
         answers: [
-            {text: 'Leda', correct: 'a'},
-            {text: 'Raquel', correct: 'k'},
-            {text: 'Mirta', correct: 't'},
-            {text: 'Sandra', correct: 'm'}
+            {text: 'Graciela / Ricardo', correct: 'f'},
+            {text: 'Liliana / Ernesto', correct: 'u'},
+            {text: 'Adriana / Victor', correct: 't'},
+            {text: 'Silvia / Alberto', correct: 'm'}
         ]
-    }
+    },
+    {
+        question: "¿Cuál es el juego de mesa favorito de la pareja?",
+        answers: [
+            {text: 'Yinsh', correct: 'i'},
+            {text: 'Dixit', correct: 't'},
+            {text: 'T.E.G', correct: 'r'},
+            {text: 'Coup', correct: 'j'}
+        ]
+    },
+    {
+        question: "¿Quién es el mejor conductor?",
+        answers: [
+            {text: 'Martin', correct: 'c'},
+            {text: 'Eileen', correct: 'o'}
+        ]
+    },
+    {
+        question: "¿Qué hace Eileen en todos los lugares nuevos que visita?",
+        answers: [
+            {text: 'El puente', correct: 'i'},
+            {text: 'Shopping', correct: 't'},
+            {text: 'Duerme', correct: 'r'},
+            {text: 'Busca Ardillas', correct: 'n'}
+        ]
+    },
+    {
+        question: "¿Quién tiene mejor sentido de orientación?",
+        answers: [
+            {text: 'Eileen', correct: 'i'},
+            {text: 'Martín', correct: 't'}
+        ]
+    },
+    {
+        question: "¿Dónde se pusieron de novios?",
+        answers: [
+            {text: 'Cumpleños de Alexia 2019', correct: 'i'},
+            {text: 'Panamá 2020', correct: 't'},
+            {text: 'Cita en pandemia 2020', correct: 'y'},
+            {text: 'Camas saltarinas 2019', correct: 'w'}
+        ]
+    },
+    {
+        question: "¿Quién se roba las sábanas?",
+        answers: [
+            {text: 'Eileen', correct: 'p'},
+            {text: 'Martín', correct: 'u'},
+            {text: 'Maia', correct: 'w'}
+        ]
+    },
 ]
