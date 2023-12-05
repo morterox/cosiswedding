@@ -70,9 +70,9 @@ body.wrong {
     border-color: black;
 }
 
-/* .btn:focus {
-    background-color: orange;
-} */
+.btn:focus {
+    background-color: rgb(0, 221, 255);
+}
 
 .btn.correct {
     --hue: var(--hue-correct);

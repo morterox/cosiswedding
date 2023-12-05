@@ -11,18 +11,16 @@ let shuffledQuestions, currentQuestionIndex, total, questionNumber
 const cosis = ['1','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
 
 startButton.addEventListener('click', startGame)
-// formName.addEventListener('blur', startGame)
 
 formName.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         formLastName.focus()
-        // startButton.click();
     }
 });
 
 formLastName.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-      startButton.click();
+        startButton.click();
     }
 });
 
