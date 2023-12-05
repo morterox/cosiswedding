@@ -3,23 +3,31 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const formContainer = document.getElementById('form-container')
-const formFullName = document.getElementById('form-full-name')
+const formName = document.getElementById('form-name')
+const formLastName = document.getElementById('form-lastname')
 
 let shuffledQuestions, currentQuestionIndex, total, questionNumber
 
 const cosis = ['1','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
 
 startButton.addEventListener('click', startGame)
-// formFullName.addEventListener('blur', startGame)
+// formName.addEventListener('blur', startGame)
 
-formFullName.addEventListener("keydown", function(event) {
+formName.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        formLastName.focus()
+        // startButton.click();
+    }
+});
+
+formLastName.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
       startButton.click();
     }
 });
 
 function startGame() {
-    if (!(formFullName.value.length > 5)) {
+    if (!(formName.value.length > 2) || !(formLastName.value.length > 2)) {
         alert('Escriba su nombre completo por favor')
     } else {
         questionNumber = 0
@@ -72,8 +80,8 @@ function selectAnswer(e) {
         setNextQuestion()
     } else {
         //TODO behavior to SEND FORM
-        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formFullName.value+'. Cruza los dedos, tal vez ganaste con: ' + total + ' puntos!'
-        console.log(formFullName.value)
+        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Cruza los dedos, tal vez ganaste! con: ' + total + ' puntos!'
+        console.log(formName.value)
         console.log(total)
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
