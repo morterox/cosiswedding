@@ -5,7 +5,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const formContainer = document.getElementById('form-container')
 const formFullName = document.getElementById('form-full-name')
 
-let shuffledQuestions, currentQuestionIndex, total
+let shuffledQuestions, currentQuestionIndex, total, questionNumber
 
 const vocals = ['a','e','i','o','u']
 
@@ -22,6 +22,7 @@ function startGame() {
     if (!(formFullName.value.length > 5)) {
         alert('Escriba su nombre completo por favor')
     } else {
+        questionNumber = 0
         total = 0
         startButton.classList.add('hide')
         formContainer.classList.add('hide')
@@ -33,12 +34,13 @@ function startGame() {
 }
 
 function setNextQuestion() {
+    questionNumber++
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = questionNumber + '. ' + question.question
     randomizeList(question.answers).forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
@@ -218,4 +220,49 @@ const questions = [
             {text: 'Maia', correct: 'w'}
         ]
     },
+    {
+        question: "¿A dónde fueron para su primera cita?",
+        answers: [
+            {text: 'Pani', correct: 'i'},
+            {text: 'Kentucky', correct: 'f'},
+            {text: 'Starbucks', correct: 'g'},
+            {text: 'Maia', correct: 'b'}
+        ]
+    },
+    {
+        question: "¿Cuál es el superhéroe favorito de Martín?",
+        answers: [
+            {text: 'Spider-Man', correct: 'i'},
+            {text: 'Iron Man', correct: 'f'},
+            {text: 'Batman', correct: 'g'},
+            {text: 'Superman', correct: 'b'}
+        ]
+    },
+    {
+        question: "¿Qué gusto de helado no puede soportar Martín?",
+        answers: [
+            {text: 'Sambayón', correct: 'i'},
+            {text: 'Dulce de Leche', correct: 'f'},
+            {text: 'Menta Granizada', correct: 'g'},
+            {text: 'Kinotos al Whisky', correct: 'b'}
+        ]
+    },
+    {
+        question: "¿Qué idiomas habla fluído Eileen?",
+        answers: [
+            {text: 'Inglés, Español, Francés, Portugués', correct: 'i'},
+            {text: 'Inglés, Español, Italiano, Francés', correct: 'f'},
+            {text: 'Inglés, Español, Italiano, Portugués', correct: 'g'},
+            {text: 'Inglés, Español, Francés, Hebreo', correct: 'b'}
+        ]
+    },
+    {
+        question: "¿Qué talla de zapato tiene Martín?",
+        answers: [
+            {text: '46/47', correct: 'i'},
+            {text: '42/43', correct: 'f'},
+            {text: '44/45', correct: 'g'},
+            {text: '48/49', correct: 'b'}
+        ]
+    }
 ]
