@@ -226,7 +226,7 @@ const questions = [
             {text: 'Pani', correct: 'i'},
             {text: 'Kentucky', correct: 'f'},
             {text: 'Starbucks', correct: 'g'},
-            {text: 'Maia', correct: 'b'}
+            {text: 'Kansas', correct: 'b'}
         ]
     },
     {
