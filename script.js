@@ -7,7 +7,7 @@ const formFullName = document.getElementById('form-full-name')
 
 let shuffledQuestions, currentQuestionIndex, total, questionNumber
 
-const vocals = ['a','e','i','o','u']
+const cosis = ['1','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
 
 startButton.addEventListener('click', startGame)
 // formFullName.addEventListener('blur', startGame)
@@ -83,7 +83,7 @@ function selectAnswer(e) {
 function behaviorForOption(correct) {
     resetState()
     //  if (correct) * when correct were boolean
-    if (vocals.includes(correct)) {
+    if (cosis.includes(correct)) {
         //TODO behavior for correct
         total++
     } else {
@@ -92,6 +92,15 @@ function behaviorForOption(correct) {
 }
 
 const questions = [
+    {
+        question: "¿Cuál es la película favorita de la pareja?",
+        answers: [
+            {text: 'Diario de una Pasión', correct: 'w'},
+            {text: 'About Time', correct: 'i'},
+            {text: 'Loco por Mary', correct: 'q'},
+            {text: 'La La Land', correct: 'n'}
+        ]
+    },
     {
         question: '¿Cuantos años hace que se conocen los novios?',
         answers: [
@@ -124,15 +133,6 @@ const questions = [
         answers: [
             {text: 'Martin', correct: 'g'},
             {text: 'Eileen', correct: 'u'}
-        ]
-    },
-    {
-        question: "¿Cuál es la película favorita de la pareja?",
-        answers: [
-            {text: 'Diario de una Pasión', correct: 'w'},
-            {text: 'About Time', correct: 'i'},
-            {text: 'Loco por Mary', correct: 'q'},
-            {text: 'La La Land', correct: 'n'}
         ]
     },
     {
@@ -223,46 +223,64 @@ const questions = [
     {
         question: "¿A dónde fueron para su primera cita?",
         answers: [
-            {text: 'Pani', correct: 'i'},
-            {text: 'Kentucky', correct: 'f'},
-            {text: 'Starbucks', correct: 'g'},
-            {text: 'Kansas', correct: 'b'}
+            {text: 'Pani', correct: 'a'},
+            {text: 'Kentucky', correct: 'c'},
+            {text: 'Starbucks', correct: 'v'},
+            {text: 'Kansas', correct: 'p'}
         ]
     },
     {
         question: "¿Cuál es el superhéroe favorito de Martín?",
         answers: [
-            {text: 'Spider-Man', correct: 'i'},
-            {text: 'Iron Man', correct: 'f'},
-            {text: 'Batman', correct: 'g'},
-            {text: 'Superman', correct: 'b'}
+            {text: 'Spider-Man', correct: 'e'},
+            {text: 'Iron Man', correct: 'r'},
+            {text: 'Batman', correct: 'j'},
+            {text: 'Superman', correct: 'k'}
         ]
     },
     {
         question: "¿Qué gusto de helado no puede soportar Martín?",
         answers: [
-            {text: 'Sambayón', correct: 'i'},
-            {text: 'Dulce de Leche', correct: 'f'},
-            {text: 'Menta Granizada', correct: 'g'},
-            {text: 'Kinotos al Whisky', correct: 'b'}
+            {text: 'Sambayón', correct: 'o'},
+            {text: 'Dulce de Leche', correct: 'd'},
+            {text: 'Menta Granizada', correct: 's'},
+            {text: 'Kinotos al Whisky', correct: 'r'}
         ]
     },
     {
         question: "¿Qué idiomas habla fluído Eileen?",
         answers: [
-            {text: 'Inglés, Español, Francés, Portugués', correct: 'i'},
-            {text: 'Inglés, Español, Italiano, Francés', correct: 'f'},
-            {text: 'Inglés, Español, Italiano, Portugués', correct: 'g'},
-            {text: 'Inglés, Español, Francés, Hebreo', correct: 'b'}
+            {text: 'Inglés, Español, Francés, Portugués', correct: 'a'},
+            {text: 'Inglés, Español, Italiano, Francés', correct: 'd'},
+            {text: 'Inglés, Español, Italiano, Portugués', correct: 'y'},
+            {text: 'Inglés, Español, Francés, Hebreo', correct: 'k'}
         ]
     },
     {
         question: "¿Qué talla de zapato tiene Martín?",
         answers: [
-            {text: '46/47', correct: 'i'},
-            {text: '42/43', correct: 'f'},
-            {text: '44/45', correct: 'g'},
-            {text: '48/49', correct: 'b'}
+            {text: '46/47', correct: 'o'},
+            {text: '42/43', correct: 'h'},
+            {text: '44/45', correct: 'y'},
+            {text: '48/49', correct: 'p'}
+        ]
+    },
+    {
+        question: "¿Qué pide Eileen en Starbucks?",
+        answers: [
+            {text: 'Chai Latte', correct: 'i'},
+            {text: 'Frapuccino', correct: 'f'},
+            {text: 'Té de Hibiscus', correct: 'g'},
+            {text: 'Café del día', correct: 'b'}
+        ]
+    },
+    {
+        question: "¿Cuál de estas sagas prefiere Eileen?",
+        answers: [
+            {text: 'Artemis Foul', correct: 'm'},
+            {text: 'Harry Potter', correct: 'u'},
+            {text: 'Lord of the Rings', correct: 'p'},
+            {text: 'The Hunger Games', correct: 'l'}
         ]
     }
 ]
