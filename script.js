@@ -8,7 +8,7 @@ const formLastName = document.getElementById('form-lastname')
 
 let shuffledQuestions, currentQuestionIndex, total, questionNumber
 
-const cosis = ['1','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
+const cosis = ['100','99','98','97','96','95','94','93','92','91','90','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
 
 startButton.addEventListener('click', startGame)
 
@@ -88,9 +88,7 @@ function selectAnswer(e) {
 
 function behaviorForOption(correct) {
     resetState()
-    //  if (correct) * when correct were boolean
     if (cosis.includes(correct)) {
-        //TODO behavior for correct
         total++
     } else {
         //TODO behavior for wrong
