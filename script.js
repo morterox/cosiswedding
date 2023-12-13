@@ -5,8 +5,9 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const formContainer = document.getElementById('form-container')
 const formName = document.getElementById('form-name')
 const formLastName = document.getElementById('form-lastname')
+const codeElement = document.getElementById('final-code')
 
-let shuffledQuestions, currentQuestionIndex, total, questionNumber
+let shuffledQuestions, currentQuestionIndex, total, questionNumber, totalcode
 
 const cosis = ['100','99','98','97','96','95','94','93','92','91','90','i','2','3','4','5','o','6','7','8','9','u','10','11','12','13','14','15','a','16','17','18','e','19','20']
 
@@ -77,12 +78,20 @@ function selectAnswer(e) {
         currentQuestionIndex++
         setNextQuestion()
     } else {
-        //TODO behavior to SEND FORM
-        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Cruza los dedos, tal vez ganaste! con: ' + total + ' puntos!'
-        console.log(formName.value)
-        console.log(total)
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
+        //TODO match codes con total
+        codes.forEach(codeblock => {
+            if (codeblock.total == total){
+                totalcode = codeblock.code
+            }
+        })
+
+        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Anota tu código, tal vez ganaste una sorpresa!'
+        codeElement.innerText = 'TÚ CÓDIGO ES: ' + totalcode
+        codeElement.classList.remove('hide')
+        // console.log(formName.value)
+        // console.log(total)
+        // startButton.innerText = 'Restart'
+        // startButton.classList.remove('hide')
     }
 }
 
@@ -287,4 +296,33 @@ const questions = [
             {text: 'The Hunger Games', correct: 'l'}
         ]
     }
+]
+
+const codes = [
+    {code: 'abanico', total: 0},
+    {code: 'banana', total: 1},
+    {code: 'congo', total: 2},
+    {code: 'duende', total: 3},
+    {code: 'elefante', total: 4},
+    {code: 'fanatico', total: 5},
+    {code: 'gelatina', total: 6},
+    {code: 'helado', total: 7},
+    {code: 'inteligente', total: 8},
+    {code: 'jodido', total: 9},
+    {code: 'kilometros', total: 10},
+    {code: 'lindura', total: 11},
+    {code: 'monstruo', total: 12},
+    {code: 'navegar', total: 13},
+    {code: 'ornitorrinco', total: 14},
+    {code: 'pecera', total: 15},
+    {code: 'quilombo', total: 16},
+    {code: 'resistencia', total: 17},
+    {code: 'silbato', total: 18},
+    {code: 'tambor', total: 19},
+    {code: 'uvas', total: 20},
+    {code: 'vinito', total: 21},
+    {code: 'walkman', total: 22},
+    {code: 'xuxa', total: 23},
+    {code: 'yuyo', total: 24},
+    {code: 'zen', total: 25}
 ]

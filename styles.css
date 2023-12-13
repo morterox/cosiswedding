@@ -55,6 +55,10 @@ body.wrong {
     font-size: 2rem;
 }
 
+.code {
+    font-size: 3rem;
+}
+
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
