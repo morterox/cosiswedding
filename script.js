@@ -85,7 +85,7 @@ function selectAnswer(e) {
             }
         })
 
-        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Anota tu código, tal vez ganaste una sorpresa!'
+        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Ahora anota tu código o podes hacer una captura de pantalla, tal vez ganaste una sorpresa!'
         codeElement.innerText = 'TÚ CÓDIGO ES: ' + totalcode
         codeElement.classList.remove('hide')
         // console.log(formName.value)
@@ -313,7 +313,7 @@ const codes = [
     {code: 'lindura', total: 11},
     {code: 'monstruo', total: 12},
     {code: 'navegar', total: 13},
-    {code: 'ornitorrinco', total: 14},
+    {code: 'oso', total: 14},
     {code: 'pecera', total: 15},
     {code: 'quilombo', total: 16},
     {code: 'resistencia', total: 17},
