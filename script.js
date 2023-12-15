@@ -6,6 +6,8 @@ const formContainer = document.getElementById('form-container')
 const formName = document.getElementById('form-name')
 const formLastName = document.getElementById('form-lastname')
 const codeElement = document.getElementById('final-code')
+const linkForm = document.getElementById('link-form')
+
 
 let shuffledQuestions, currentQuestionIndex, total, questionNumber, totalcode
 
@@ -85,9 +87,11 @@ function selectAnswer(e) {
             }
         })
 
-        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Ahora anota tu código o podes hacer una captura de pantalla, tal vez ganaste una sorpresa!'
+        questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Ahora ingresa tu codigo en el link debajo, tal vez ganaste una sorpresa!'
         codeElement.innerText = 'TÚ CÓDIGO ES: ' + totalcode
         codeElement.classList.remove('hide')
+        linkForm.classList.remove('hide')
+
         // console.log(formName.value)
         // console.log(total)
         // startButton.innerText = 'Restart'
