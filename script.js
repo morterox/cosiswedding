@@ -28,7 +28,7 @@ formLastName.addEventListener("keydown", function(event) {
 });
 
 function startGame() {
-    if (!(formName.value.length > 2) || !(formLastName.value.length > 2)) {
+    if (!(formName.value.length > 2)) {
         alert('Escriba su nombre completo por favor')
     } else {
         questionNumber = 0
