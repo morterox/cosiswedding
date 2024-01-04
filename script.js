@@ -90,7 +90,8 @@ function selectAnswer(e) {
         questionElement.innerText = 'Gracias por participar de nuestra fiesta '+formName.value+'. Ahora ingresa tu codigo en el link debajo, tal vez ganaste una sorpresa!'
         codeElement.innerText = 'TÚ CÓDIGO ES: ' + totalcode
         codeElement.classList.remove('hide')
-        linkForm.classList.remove('hide')
+        // NO more additions to the form with this line commented:
+        // linkForm.classList.remove('hide')
 
         // console.log(formName.value)
         // console.log(total)
